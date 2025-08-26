@@ -40,9 +40,22 @@ describe("Calculadora", () => {
         expect(resultado).toBe(2);
     });
 
-     test("Deve multiplicar dois números corretamente", () => {
+     test("Não é possível dividir por zero", () => {
         expect(() => {
             dividir (10, 0);
-            }).toThrowError("Divisão por zero não é permitida");
+            }).toThrow("Não é possível dividir por zero");
         })
+
+        test("Deve multiplicar dois números corretamente", () => {
+        // AAA
+        // Arrange (Preparar)
+        const a = 12;
+        const b = 2;
+
+        // Act (Executar)
+        const resultado = multiplicar(a, b);
+
+        // Assert (Verificar)
+        expect(resultado).toBe(24);
+    });
     });
